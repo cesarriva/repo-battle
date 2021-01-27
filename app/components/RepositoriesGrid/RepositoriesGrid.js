@@ -4,6 +4,7 @@ import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons
 import Card from '../Card/Card';
 
 import './RepositoriesGrid.css';
+import Tooltip from '../Tooltip/Tooltip';
 
 const RepositoriesGrid = ({ repositories }) => {
   return (
@@ -22,10 +23,12 @@ const RepositoriesGrid = ({ repositories }) => {
             >
               <ul className="card-list">
                 <li>
-                  <FaUser color="rgb(255, 191, 116)" size={22} />
-                  <a href={`https://github.com/${login}`}>
-                    {login}
-                  </a>
+                  <Tooltip text="Github user name">
+                    <FaUser color="rgb(255, 191, 116)" size={22} />
+                    <a href={`https://github.com/${login}`}>
+                      {login}
+                    </a>
+                  </Tooltip>
                 </li>
                 <li>
                   <FaStar color="rgb(255, 215, 0)" size={22} />
