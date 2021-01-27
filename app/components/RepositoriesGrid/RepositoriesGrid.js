@@ -4,7 +4,7 @@ import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons
 import Card from '../Card/Card';
 
 import './RepositoriesGrid.css';
-import Tooltip from '../Tooltip/Tooltip';
+import Tooltip from '../Tooltip/TooltipWithHoc';
 
 const RepositoriesGrid = ({ repositories }) => {
   return (
