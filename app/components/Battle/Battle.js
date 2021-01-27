@@ -3,6 +3,8 @@ import Instructions from './Instructions';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 import Results from './Results';
+import { ThemeConsumer } from '../../contexts/theme';
+
 
 import './Battle.css';
 

@@ -56,6 +56,11 @@
   border-radius: 3px;
 }
 
+.bg-dark {
+  background: rgba(36, 40, 42);
+  border-radius: 3px;
+}
+
 .card {
   margin: 10px 0;
   width: 250px;
