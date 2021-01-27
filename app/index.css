@@ -1,0 +1,87 @@
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-clear {
+  border: none;
+  background: transparent;
+}
+
+.header-sm {
+  font-size: 28px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 200px;
+}
+
+.btn-dark {
+  color: #e6e6e6;
+  background: #141414;
+}
+
+.btn-dark:disabled {
+  background: #f2f2f2;
+  color: #c7c7c7;
+}
+
+.btn-space {
+  margin: 40px auto;
+}
+
+.error {
+  color: #ff1616;
+  font-size: 20px;
+  margin: 50px 0;
+}
