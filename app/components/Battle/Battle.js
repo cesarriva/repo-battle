@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import Instructions from './Instructions';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
-import Results from './Results';
-import { ThemeConsumer } from '../../contexts/theme';
-
 
 import './Battle.css';
 
@@ -14,13 +13,11 @@ class Battle extends Component {
 
     this.state = {
       playerOne: null,
-      playerTwo: null,
-      battle: false
+      playerTwo: null
     };
 
     this.handlePlayerSubmit = this.handlePlayerSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.resetBattle = this.resetBattle.bind(this);
   }
 
   handlePlayerSubmit(id, playerName) {
@@ -35,24 +32,8 @@ class Battle extends Component {
     })
   }
 
-  resetBattle() {
-    this.setState({
-      playerOne: null,
-      playerTwo: null,
-      battle: false
-    });
-  }
-
   render() {
-    const { playerOne, playerTwo, battle } = this.state;
-
-    if (battle) {
-      return (
-        <Results
-          playerOne={playerOne}
-          playerTwo={playerTwo}
-          onReset={this.resetBattle} />)
-    }
+    const { playerOne, playerTwo } = this.state;
 
     return (
       <React.Fragment>
@@ -84,11 +65,15 @@ class Battle extends Component {
             }
           </div>
           {playerOne && playerTwo && (
-            <button
+            <Link
               className="btn btn-dark btn-space"
-              onClick={() => this.setState({ battle: true })}>
+              to={{
+                pathname: '/battle/results',
+                search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
+              }}
+            >
               Battle
-            </button>
+            </Link>
           )}
         </div>
 
