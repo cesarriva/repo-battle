@@ -3,10 +3,6 @@
   flex-wrap: wrap;
 }
 
-.space-around {
-  justify-content: space-around;
-}
-
 .header-lg {
   font-size: 35px;
   font-weight: 300;

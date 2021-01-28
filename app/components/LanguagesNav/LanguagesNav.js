@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './LanguagesNav.css';
-
 const LanguagesNav = ({ selectedLanguage, onUpdateSelectedLanguage }) => {
   const popularLanguages = ['All', 'Javascript', 'Ruby', 'Java', 'C#', 'Python'];
 
