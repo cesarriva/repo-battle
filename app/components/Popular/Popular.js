@@ -6,24 +6,17 @@ import { fetchPopularRepositories } from '../../utils/api';
 import Loading from '../Loading/Loading';
 
 class Popular extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedLanguage: 'All',
-      repositories: {},
-      error: null
-    }
-
-    this.updateSelectedLanguage = this.updateSelectedLanguage.bind(this);
-    this.isLoading = this.isLoading.bind(this);
-  }
+  state = {
+    selectedLanguage: 'All',
+    repositories: {},
+    error: null
+  };
 
   componentDidMount() {
     this.updateSelectedLanguage(this.state.selectedLanguage);
   }
 
-  updateSelectedLanguage(selectedLanguage) {
+  updateSelectedLanguage = (selectedLanguage) => {
     this.setState({
       selectedLanguage,
       error: null
@@ -44,12 +37,12 @@ class Popular extends Component {
           })
         });
     }
-  }
+  };
 
-  isLoading() {
+  isLoading = () => {
     const { selectedLanguage, repositories, error } = this.state;
     return !repositories[selectedLanguage] && !error;
-  }
+  };
 
   render() {
     const { selectedLanguage, repositories, error } = this.state;

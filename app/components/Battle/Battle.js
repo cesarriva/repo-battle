@@ -8,29 +8,22 @@ import PlayerPreview from './PlayerPreview';
 import './Battle.css';
 
 class Battle extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    playerOne: null,
+    playerTwo: null
+  };
 
-    this.state = {
-      playerOne: null,
-      playerTwo: null
-    };
-
-    this.handlePlayerSubmit = this.handlePlayerSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
-  }
-
-  handlePlayerSubmit(id, playerName) {
+  handlePlayerSubmit = (id, playerName) => {
     this.setState({
       [id]: playerName
     })
-  }
+  };
 
-  handleReset(id) {
+  handleReset = (id) => {
     this.setState({
       [id]: null
     })
-  }
+  };
 
   render() {
     const { playerOne, playerTwo } = this.state;

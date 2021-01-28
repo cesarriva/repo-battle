@@ -5,27 +5,20 @@ import { ThemeConsumer } from '../../contexts/theme';
 import './PlayerInput.css';
 
 class PlayerInput extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    username: ''
+  };
 
-    this.state = {
-      username: ''
-    }
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state.username);
-  }
+  };
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     this.setState({
       username: event.target.value
     })
-  }
+  };
 
   render() {
     return (
